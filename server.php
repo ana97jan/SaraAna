@@ -186,13 +186,13 @@ Flight::route('GET /korisnik.json', function() {
 		$podaci = json_decode($podaci_json);
 
 		if($podaci == null) {
-			$odgovor["poruka"] = "Podaci nisu prosleđeni!";
+			$odgovor["poruka"] = "Podaci su prosleđeni!";
 			$json_odgovor = json_encode($odgovor);
 			echo $json_odgovor;
 		}
 		else {
 			if(!property_exists($podaci,'naocareNaziv') || !property_exists($podaci,'naocareCena') ||  !property_exists($podaci,'naocareStanje') || !property_exists($podaci,'proizvodjacID')) {
-				$odgovor["poruka"] = "Nisu prosleđeni odgovarajući podaci!";
+				$odgovor["poruka"] = " Nisu prosleđeni  odgovarajući podaci!";
 				$json_odgovor = json_encode($odgovor,JSON_UNESCAPED_UNICODE);
 				echo $json_odgovor;
 				return false;
@@ -221,7 +221,7 @@ Flight::route('GET /korisnik.json', function() {
 		$podaci = json_decode($podaci_json);
 
 		if($podaci == null) {
-		$odgovor["poruka"] = "Podaci nisu prosleđeni!";
+		$odgovor["poruka"] = "Podaci su prosleđeni!";
 		$json_odgovor = json_encode($odgovor);
 		echo $json_odgovor;
 		return false;
